@@ -13,8 +13,6 @@ import { WidgetService } from '../../services/widget.service';
 })
 export class DashboardComponent {
   private widgetService = inject(WidgetService);
-
-  // By exposing the Observable directly, the async pipe in the HTML template 
-  // will automatically handle subscribing, unsubscribing, AND change detection!
+  
   widgets$: Observable<WidgetConfig[]> = this.widgetService.getUserWidgets();
 }
